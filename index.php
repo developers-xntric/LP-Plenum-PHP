@@ -14,17 +14,13 @@
 	  <link rel="apple-touch-icon" href="images/favicon.ico" />
     <title>Plenum Landing Page</title>
 
-    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -62,24 +58,14 @@
                             </div>
                             </div>
                             <div class="mb-3">
-                                <!--<select class="form-select" id="goal_mod" name="goal" required>
-                                    <option value="">Your Main Goal With us</option>
-                                    <option value="goal1">Goal 1</option>
-                                    <option value="goal2">Goal 2</option>
-                                    <option value="goal3">Goal 3</option>
-                                </select>-->
                               	<textarea class="form-control" id="goal_mod" name="goal" placeholder="Your Main Goal With us" required></textarea>
                             </div>
                                       	
-                            <?php //echo $_SERVER['HTTP_HOST']; ?>
+                            <?php ?>
                             <?php
 
                             $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                            // print_r(parse_url($actual_link));
-
                             $rfer_dmn = parse_url($_SERVER['HTTP_REFERER']);
-                            // echo $rfer_dmn['host'];
-
                             ?>
 
                             <input type="hidden" id="gclid_mod" name="gclid" maxlength='255' value="<?php echo $_GET['gclid']; ?>">
@@ -102,7 +88,6 @@
                                 $ip = $_SERVER['REMOTE_ADDR'];
                               }
                               
-                              //echo $ip;
                             ?>
 
                             <input type="hidden" name='ip_add' id='ip_add_mod' maxlength='255' value="<?php echo $ip; ?>">
@@ -173,24 +158,14 @@
                                             <input type="text" name="comp" id="comp" placeholder="Company" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <!--<select name="goal" id="goal" class="form-select">
-                                                <option value="">Your Main Goal With us </option>
-                                                <option value="Your Main Goal With us">Your Main Goal With us </option>
-                                                <option value="Your Main Goal With us">Your Main Goal With us </option>
-                                                <option value="Your Main Goal With us">Your Main Goal With us </option>
-                                            </select>-->
                               				<textarea class="form-control" id="goal" name="goal" placeholder="Your Main Goal With us" required></textarea>
                                         </div>
                                       	
-                                      	<?php //echo $_SERVER['HTTP_HOST']; ?>
+                                      	<?php ?>
                                         <?php
-
                                             $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                                            // print_r(parse_url($actual_link));
-
+                                          
                                             $rfer_dmn = parse_url($_SERVER['HTTP_REFERER']);
-                                            // echo $rfer_dmn['host'];
-
                                         ?>
 
                                         <input type="hidden" id="gclid" name="gclid" maxlength='255' value="<?php echo $_GET['gclid']; ?>">
@@ -212,7 +187,6 @@
                                             } else {
                                                 $ip = $_SERVER['REMOTE_ADDR'];
                                             }
-                                            //echo $ip;
                                         ?>
 
                                         <input type="hidden" name='ip_add' id='ip_add' maxlength='255' value="<?php echo $ip; ?>">
@@ -890,8 +864,6 @@
 
             var email_pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
             var phone_pattern = /^[\d\s+-]+$/;
-            // var forbiddenDomains = ["gmail.com", "yahoo.com"];
-            // var domain = email.split("@")[1];
 
             if (name == '') {
                 alert("Enter your name");
@@ -954,7 +926,6 @@
       
       	
         function checkValidationmod() {
-            //alert("a");
             var name = jQuery("#nme_mod").val();
             var email = jQuery("#eml_mod").val();
             var phone = jQuery("#phn_mod").val();
@@ -963,8 +934,6 @@
 
             var email_pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
             var phone_pattern = /^[\d\s+-]+$/;
-            // var forbiddenDomains = ["gmail.com", "yahoo.com"];
-            // var domain = email.split("@")[1];
 
             if (name == '') {
                 alert("Enter your name");
@@ -972,7 +941,6 @@
                 return false;
             }
             else if (email == '') {
-                //alert("aa");
                 alert("Enter your email id");
                 jQuery("#eml_mod").focus();
                 return false;
@@ -982,13 +950,7 @@
                 jQuery("#eml_mod").focus();
                 return false;
             }
-            //else if (domain && forbiddenDomains.includes(domain.toLowerCase())) {
-            //  alert("Gmail and Yahoo email addresses are not allowed.");
-            //  jQuery("#eml").focus();
-            //  return false;
-            //}
             else if (phone == '') {
-                //alert("aa");
                 alert("Enter your 10 digit phone number");
                 jQuery("#phn_mod").focus();
                 return false;
@@ -1013,12 +975,6 @@
                 jQuery("#goal_mod").focus();
                 return false;
             }            
-            // else if (grecaptcha.getResponse(html_element_ban_id) == '') {
-            //     //alert("aa");
-            //     alert("Captcha can not be blank! Kindly verify the captcha.");
-            //     jQuery("#ban_cap").focus();
-            //     return false;
-            // }
             else {
                 jQuery("#mod_frm_btn").attr("disabled", true);
                 document.mod_frm.submit();
