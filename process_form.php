@@ -1,7 +1,7 @@
 <?php
 
 function isDuplicateSubmission($email, $phone) {
-  $dataStoreFile = 'datastore.txt'; // Replace with the path to your data store file
+  $dataStoreFile = 'datastore.txt'; // for storing the data temporarily 
 
   // Read the data store file
   $data = @file_get_contents($dataStoreFile);
@@ -10,18 +10,16 @@ function isDuplicateSubmission($email, $phone) {
     $data = json_decode($data, true);
     if ($data !== null) {
       foreach ($data as $entry) {
-        // 5 minutes in seconds
         if ($entry['email'] == $email && $entry['phone'] == $phone && (time() - $entry['timestamp']) <= 86400) {
-          return true; // Duplicate found
+          return true; // if Duplicate found
         }
       }
     }
   }
 
-  return false; // No recent duplicates found
+  return false; // If No recent duplicates found
 }
 
-//print_r($_POST);exit();
 
 $name = $_POST['nme'];
 $email = $_POST['eml'];
@@ -41,7 +39,6 @@ $ip_add = $_POST['ip_add'];
 
 if ($name != '' && $email != '' && $phone != '' && $goal != '' && $comp != '') {
   
-  	//print_r($_POST);exit();
 	
 	if (!isDuplicateSubmission($email, $phone)) {
 
@@ -55,7 +52,7 @@ if ($name != '' && $email != '' && $phone != '' && $goal != '' && $comp != '') {
 		];
 
 		// Serialize the data and append it to the data store file
-		$dataStoreFile = 'datastore.txt'; // Replace with the path to your data store file
+		$dataStoreFile = 'datastore.txt'; 
 		$existingData = @file_get_contents($dataStoreFile);
 		$existingDataArray = json_decode($existingData, true) ?: [];
 		$existingDataArray[] = $data;
@@ -92,12 +89,8 @@ if ($name != '' && $email != '' && $phone != '' && $goal != '' && $comp != '') {
 
 	}
 	else {
-      // Data is a duplicate within the last 5 minutes, handle accordingly (e.g., show an error message)
       echo "<script>alert('Duplicate phone and email detected. Please try again after 1 day.'); window.location.href = 'index.php';</script>";
     }
 
 }
-
-
-
 ?>
