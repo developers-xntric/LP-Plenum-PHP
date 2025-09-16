@@ -1,4 +1,4 @@
-var ele_mswiper = new Swiper(".elemina_slider_mobile", {
+let ele_mswiper = new Swiper(".elemina_slider_mobile", {
     loop: true,
     slidesPerView: 1,
     autoHeight: true, 
@@ -12,7 +12,7 @@ var ele_mswiper = new Swiper(".elemina_slider_mobile", {
     },
 });
 
-var kef_mswiper = new Swiper(".key_feature_slider_mobile", {
+let kef_mswiper = new Swiper(".key_feature_slider_mobile", {
     loop: true,
     slidesPerView: 1,
     autoplay: {
@@ -33,7 +33,7 @@ var kef_mswiper = new Swiper(".key_feature_slider_mobile", {
     },
 });
 
-var bannersmallswiper = new Swiper(".baner_point_slider", {
+let bannersmallswiper = new Swiper(".baner_point_slider", {
     loop: true,
     slidesPerView: 1,
     autoplay: {
@@ -43,7 +43,7 @@ var bannersmallswiper = new Swiper(".baner_point_slider", {
 });
 
 // Slider 1 – Leading Enterprise
-var swiper = new Swiper(".leading_enterprise_slider", {
+let swiper = new Swiper(".leading_enterprise_slider", {
     loop: true,
     spaceBetween: 30,
     slidesPerView: 6,
@@ -64,7 +64,7 @@ var swiper = new Swiper(".leading_enterprise_slider", {
 });
 
 // Slider 2 – Benefits Pay
-var benefitsSwiper = new Swiper(".benfits-pay-slider", {
+let benefitsSwiper = new Swiper(".benfits-pay-slider", {
     loop: true,
     slidesPerView: 4,
     spaceBetween: 30,
@@ -90,7 +90,7 @@ var benefitsSwiper = new Swiper(".benfits-pay-slider", {
 });
 
 // Testimonials slider
-var testiSwiper = new Swiper(".testimonials_slider", {
+let testiSwiper = new Swiper(".testimonials_slider", {
     loop: true,
     slidesPerView: 1,
     autoplay: {
