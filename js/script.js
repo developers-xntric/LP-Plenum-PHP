@@ -24,10 +24,10 @@ let kef_mswiper = new Swiper(".key_feature_slider_mobile", {
         clickable: true,
     },
     breakpoints: {
-        0: { // Mobile version
+        0: { 
             autoHeight: true,
         },
-        768: { // Desktop version
+        768: {
             autoHeight: false,
         },
     },
@@ -52,11 +52,11 @@ let swiper = new Swiper(".leading_enterprise_slider", {
         disableOnInteraction: false,
     },
     breakpoints: {
-        0: { // Mobile view
+        0: { 
             slidesPerView: 3,
             spaceBetween: 20,
         },
-        768: { // Desktop view
+        768: { 
             slidesPerView: 6,
             spaceBetween: 30,
         },
@@ -73,11 +73,11 @@ let benefitsSwiper = new Swiper(".benfits-pay-slider", {
         disableOnInteraction: false,
     },
     breakpoints: {
-        0: { // Mobile view
+        0: { 
             slidesPerView: 2,
             spaceBetween: 20,
         },
-        768: { // Desktop view
+        768: { 
             slidesPerView: 4,
             spaceBetween: 30,
         },
@@ -103,10 +103,10 @@ let testiSwiper = new Swiper(".testimonials_slider", {
     },
     watchOverflow: true,
     breakpoints: {
-        0: { // Mobile version
+        0: { 
             autoHeight: true,
         },
-        768: { // Desktop version
+        768: { 
             autoHeight: false, 
         },
     },
